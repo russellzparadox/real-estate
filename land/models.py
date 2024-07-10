@@ -14,6 +14,20 @@ class Feature(models.Model):
         return self.name
 
 
+class TypeOfPropertyUse(models.Model):
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+
+
+class Status(models.Model):
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+
+
 class Land(models.Model):
     lat = models.FloatField()
     long = models.FloatField()
@@ -30,6 +44,9 @@ class Land(models.Model):
     ownerName = models.CharField(max_length=255)
     image = models.ImageField(upload_to=land_upload_path, blank=True, null=True)
 
-    features = models.ManyToManyField(Feature, related_name='lands', blank=True, null=True)
+    features = models.ManyToManyField(Feature, related_name='lands', blank=True)
+    # typeOfPropertyUse = models.ForeignKey(TypeOfPropertyUse, on_delete=models.SET_NULL,
+    #                                       related_name='typeOfPropertyUse')
+    # status = models.ForeignKey(Status, on_delete=models.SET_NULL, related_name='status', null=True, )
 
     privetNote = models.TextField(blank=True, null=True)
