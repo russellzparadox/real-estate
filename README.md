@@ -167,7 +167,7 @@ the base of every API request is ``/api/``
 # List Cases
 
 - endPint : `api/cases`
-- method : ``GEt``
+- method : ``GET``
 - response:
 ```json
 [
