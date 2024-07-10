@@ -1,4 +1,7 @@
 from rest_framework import generics
+
+from land.models import TypeOfPropertyUse, Status
+from land.serializers import TypeOfPropertyUseSerializer, StatusSerializer
 from .models import Case
 from .serializers import CaseSerializer, CitySerializer, ProvinceSerializer
 from iranian_cities.models import Shahr, Ostan
@@ -15,6 +18,16 @@ class CitiesByProvinceAPIView(generics.ListAPIView):
 class ProvinceDetailAPIView(generics.RetrieveAPIView):
     queryset = Ostan.objects.all()
     serializer_class = ProvinceSerializer
+
+
+class TypeOfPropertyListApiView(generics.ListAPIView):
+    queryset = TypeOfPropertyUse.objects.all()
+    serializer_class = TypeOfPropertyUseSerializer
+
+
+class StatusListAPIView(generics.ListAPIView):
+    queryset = Status.objects.all()
+    serializer_class = StatusSerializer
 
 
 class ProvinceListAPIView(generics.ListAPIView):
