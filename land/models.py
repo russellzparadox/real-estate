@@ -1,5 +1,6 @@
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
+from iranian_cities.fields import OstanField, ShahrField
 
 
 def land_upload_path(instance, filename):
@@ -17,7 +18,8 @@ class Land(models.Model):
     lat = models.FloatField()
     long = models.FloatField()
     address = models.CharField(max_length=750)
-    areaOfBuilding = models.FloatField()
+    province = OstanField(null=True, blank=True)
+    city = ShahrField(null=True, blank=True)
     areaOfBuilding = models.FloatField(blank=True, null=True)
     areaOfLand = models.FloatField()
     electricityAmper = models.FloatField(blank=True, null=True)
