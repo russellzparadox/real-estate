@@ -7,6 +7,6 @@ from land.models import Land
 class Case(models.Model):
     title = models.CharField(max_length=255)
     land = models.OneToOneField(Land, on_delete=models.CASCADE)
-    content = models.TextField()
+    content = models.TextField(blank=True, null=True)
     sellPrice = models.PositiveBigIntegerField()
-    rentPrice = models.PositiveBigIntegerField()
+    rentPrice = models.PositiveBigIntegerField(blank=True, null=True)
