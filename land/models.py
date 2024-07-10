@@ -6,7 +6,13 @@ def land_upload_path(instance, filename):
     return f'land{instance.id}/{filename}'
 
 
-# Create your models here.
+class Feature(models.Model):
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+
+
 class Land(models.Model):
     lat = models.FloatField()
     long = models.FloatField()
@@ -21,30 +27,6 @@ class Land(models.Model):
     ownerName = models.CharField(max_length=255)
     image = models.ImageField(upload_to=land_upload_path)
 
-    water = models.BooleanField(default=False)
-    oghaf = models.BooleanField(default=False)
-    bascule60Ton = models.BooleanField(default=False)
-    phoneLine = models.BooleanField(default=False)
-    crane20Ton = models.BooleanField(default=False)
-    crane5Ton = models.BooleanField(default=False)
-    crane40Ton = models.BooleanField(default=False)
-    waterWheel = models.BooleanField(default=False)
-    fullTitle = models.BooleanField(default=False)  # سند شیش دنگ
-    solhGhati = models.BooleanField(default=False)
-    gas = models.BooleanField(default=False)
-    g60Gas = models.BooleanField(default=False)
-    proxy = models.BooleanField(default=False)  # وکالتی
-    elevator = models.BooleanField(default=False)
-    ethernet = models.BooleanField(default=False)
-    lift5Ton = models.BooleanField(default=False)
-    crane10Ton = models.BooleanField(default=False)
-    crane4Ton = models.BooleanField(default=False)
-    crane7Ton = models.BooleanField(default=False)
-    roofCrane = models.BooleanField(default=False)
-    daftarcheShahrak = models.BooleanField(default=False)  # این چه بولشیتیه
-    commonTitle = models.BooleanField(default=False)  # سند مشاع
-    memorandum = models.BooleanField(default=False)  # قولنامه
-    gas2Pound = models.BooleanField(default=False)  # گاز دو پوند
-    newBuild = models.BooleanField(default=False)
+    features = models.ManyToManyField(Feature, related_name='lands')
 
     privetNote = models.TextField()
