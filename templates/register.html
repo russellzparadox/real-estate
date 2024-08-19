@@ -1,0 +1,199 @@
+{% extends 'base.html' %}
+{% load static %}
+<!-- Title -->
+{% block title %}Multipage - Real Estate Register Page | Unify - Responsive Website Template{% endblock %}
+
+{% block body %}
+    <!-- Login - Heading -->
+    <div class="g-max-width-645 text-center g-pt-100 mx-auto g-mb-80">
+        <h1 class="mb-4">Make it your Real Estate</h1>
+        <p class="lead">Tailor your experience with England’s greatest property resource. Access the best market
+            insights and comprehensive auction results.</p>
+    </div>
+    <!-- End Login - Heading -->
+
+    <!-- Login -->
+    <div class="container g-pb-30">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4 text-center g-mb-70">
+                <h2 class="h5 mb-4">Create your free account today!</h2>
+
+                <!-- Login Form -->
+                <form method="post" action="{% url 'signup_view' %}" class="g-mb-30">
+                    {% csrf_token %}
+                    <div class="g-mb-20">
+                        {{ form.first_name }}
+                        {% if form.first_name.errors %}
+                            <div class="text-danger">
+                                {% for error in form.first_name.errors %}
+                                    <p>{{ error }}</p>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="g-mb-20">
+                        {{ form.last_name }}
+                        {% if form.last_name.errors %}
+                            <div class="text-danger">
+                                {% for error in form.last_name.errors %}
+                                    <p>{{ error }}</p>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="g-mb-20">
+                        {{ form.email }}
+                        {% if form.email.errors %}
+                            <div class="text-danger">
+                                {% for error in form.email.errors %}
+                                    <p>{{ error }}</p>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="g-mb-20">
+                        {{ form.username }}
+                        {% if form.username.errors %}
+                            <div class="text-danger">
+                                {% for error in form.username.errors %}
+                                    <p>{{ error }}</p>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="g-mb-20">
+                        {{ form.phone_number }}
+                        {% if form.phone_number.errors %}
+                            <div class="text-danger">
+                                {% for error in form.phone_number.errors %}
+                                    <p>{{ error }}</p>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="g-mb-20">
+                        {{ form.password }}
+                        {% if form.password.errors %}
+                            <div class="text-danger">
+                                {% for error in form.password.errors %}
+                                    <p>{{ error }}</p>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <button class="btn btn-block u-btn-primary g-color-white g-bg-primary-dark-v1--hover g-font-weight-600 g-font-size-12 text-uppercase rounded-0 g-px-25 g-py-15"
+                            type="submit">Create Account
+                    </button>
+                </form>
+                <!-- End Login Form -->
+
+                <a class="d-block g-mb-10" href="{% url 'login' %}">Already have an account? Sign in</a>
+                <p class="g-font-size-12">Please view our <a class="g-color-text g-text-underline" href="#">Personal
+                    Information Collection Statement</a></p>
+            </div>
+
+            <div class="col-md-6 col-lg-5 ml-lg-5 g-mb-70">
+                <!-- Icon Block -->
+                <div class="media g-mb-30">
+                    <div class="d-flex mr-3">
+                <span class="u-icon-v1 u-icon-size--lg g-color-text">
+                  <i class="icon-medical-022 u-line-icon-pro"></i>
+                </span>
+                    </div>
+                    <div class="media-body">
+                        <h3 class="h5">Don’t miss a thing</h3>
+                        <p>Save your dream homes and stay updated on your favourite searches, across any device.</p>
+                    </div>
+                </div>
+                <!-- End Icon Block -->
+
+                <!-- Icon Block -->
+                <div class="media g-mb-30">
+                    <div class="d-flex mr-3">
+                <span class="u-icon-v1 u-icon-size--lg g-color-text">
+                  <i class="icon-real-estate-083 u-line-icon-pro"></i>
+                </span>
+                    </div>
+                    <div class="media-body">
+                        <h3 class="h5">Get organised</h3>
+                        <p>Receive open for inspection planners and our comprehensive weekly auction results.</p>
+                    </div>
+                </div>
+                <!-- End Icon Block -->
+
+                <!-- Icon Block -->
+                <div class="media">
+                    <div class="d-flex mr-3">
+                <span class="u-icon-v1 u-icon-size--lg g-color-text">
+                  <i class="icon-real-estate-014 u-line-icon-pro"></i>
+                </span>
+                    </div>
+                    <div class="media-body">
+                        <h3 class="h5">Make the most of your home</h3>
+                        <p>Claim your home and access insights and tools to help you understand the market.</p>
+                    </div>
+                </div>
+                <!-- End Icon Block -->
+            </div>
+        </div>
+    </div>
+    <!-- Login -->
+
+    <!-- Call to Action -->
+    <div class="g-bg-primary g-py-100">
+        <div class="g-max-width-645 text-center mx-auto">
+            <div class="mb-5">
+                <h2 class="g-color-white g-font-weight-600">Change of a living place - is the first step towards
+                    favorable changes</h2>
+            </div>
+
+            <span class="d-inline-block g-font-weight-600 text-uppercase mr-4">Call Us</span>
+            <a class="btn u-btn-outline-white g-brd-2 g-color-main g-color-primary--hover g-bg-white--hover g-font-weight-600 g-font-size-12 text-uppercase rounded-0 g-px-25 g-py-13 mb-2"
+               href="#">
+                (0161) 347 8854
+                <i class="g-pos-rel g-top-minus-1 ml-2 fa fa-angle-left"></i>
+            </a>
+            <span class="d-inline-block g-font-weight-600 text-uppercase mx-4">or</span>
+            <a class="btn u-btn-black g-brd-primary--hover g-color-primary g-color-main--hover g-bg-main g-bg-white--hover g-font-weight-600 g-font-size-12 text-uppercase rounded-0 g-px-25 g-py-13 mb-2"
+               href="page-contacts-1.html">
+                Contact Us
+                <i class="g-pos-rel g-top-minus-1 ml-2 fa fa-angle-left"></i>
+            </a>
+        </div>
+    </div>
+    <!-- End Call to Action -->
+{% endblock %}
+<!-- End Content -->
+{% block script %}
+    <script>
+        $(document).on('ready', function () {
+            // initialization of header
+            $.HSCore.components.HSHeader.init($('#js-header'));
+            $.HSCore.helpers.HSHamburgers.init('.hamburger');
+
+            // initialization of HSMegaMenu component
+            $('.js-mega-menu').HSMegaMenu({
+                rtl: true,
+                event: 'hover',
+                pageContainer: $('.container'),
+                breakpoint: 991
+            });
+
+            // initialization of HSDropdown component
+            $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {
+                afterOpen: function () {
+                    $(this).find('input[type="search"]').focus();
+                }
+            });
+
+            // initialization of custom select
+            $.HSCore.components.HSSelect.init('.js-custom-select');
+
+            // initialization of go to
+            $.HSCore.components.HSGoTo.init('.js-go-to');
+        });
+    </script>
+
+{% endblock %}
+
