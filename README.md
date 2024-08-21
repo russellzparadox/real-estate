@@ -1,3 +1,52 @@
+# project startup
+
+## 1.first make sure python and venv is installed
+
+then run this command
+
+```bash
+python -m venv .venv #you only need to do this for the first time
+```
+
+## 2.then activate the venv
+
+- ### windows
+
+```
+.venv\Scripts\activate
+```
+
+- ### On Unix or MacOS, run:
+
+```bash
+source .venv/bin/activate
+```
+
+if using fish
+
+```fish
+source .venv/bin/activate.fish
+```
+
+## 3. install dependency's
+
+**you only need to do this for the first time**
+
+```
+ pip install -r requirements.txt 
+```
+
+```shell
+python manage.py migrate
+python manage.py generate_city
+```
+
+## 4.then run the server
+
+```shell
+python manage.py runserver
+```
+
 ## api request Helper
 
 the base of every API request is ``/api/``
@@ -169,6 +218,7 @@ the base of every API request is ``/api/``
 - endPint : `api/cases`
 - method : ``GET``
 - response:
+
 ```json
 [
   {
