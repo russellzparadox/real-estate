@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'rest_framework',
     "phonenumber_field",
     'iranian_cities',
-    'agents'
+    'agents',
     'case',
     'land',
     'user'
