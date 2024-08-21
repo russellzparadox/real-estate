@@ -1,3 +1,4 @@
+from django.views.generic import TemplateView
 from rest_framework import generics
 
 from land.models import TypeOfPropertyUse, Status
@@ -5,6 +6,11 @@ from land.serializers import TypeOfPropertyUseSerializer, StatusSerializer
 from .models import Case
 from .serializers import CaseSerializer, CitySerializer, ProvinceSerializer
 from iranian_cities.models import Shahr, Ostan
+
+
+class CasesListView(TemplateView):
+    template_name = 'page-list-view-1.html'
+
 
 
 class CitiesByProvinceAPIView(generics.ListAPIView):

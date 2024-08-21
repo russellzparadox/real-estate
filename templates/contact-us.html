@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    <title>Multipage - Real Estate Contacts Page | Unify - Responsive Website Template</title>
+{% endblock title %}
+
+{% block body %}
+    <!-- Google Map -->
+    <div id="GMapCustomized-light" class="js-g-map embed-responsive embed-responsive-21by9 g-height-400"
+         data-type="custom"
+         data-lat="40.674"
+         data-lng="-73.946"
+         data-zoom="12"
+         data-title="Agency"
+         data-styles='[["", "", [{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]], ["", "labels", [{"visibility":"on"}]], ["water", "", [{"color":"#bac6cb"}]] ]'
+         data-pin="true"
+         data-pin-icon="assets/img/icons/pin/marker.png">
+    </div>
+    <!-- End Google Map -->
+
+    <!-- Contacts -->
+    <div class="container g-py-100">
+        <header class="text-center g-mb-50">
+            <h1 class="h2">Contact Us</h1>
+            <p class="lead">Got a question? We'd love to hear from you!</p>
+        </header>
+
+        <div class="row text-center g-mb-50">
+            <div class="col-sm-6 col-md-4 g-mb-30">
+                <!-- Icon Blocks -->
+                <span class="g-font-size-40 g-color-primary mb-3">
+              <i class="icon-real-estate-027 u-line-icon-pro"></i>
+            </span>
+                <h4 class="h5 g-font-weight-600 g-mb-5">Address</h4>
+                <span class="d-block">61 Oxford str., London, 3DG</span>
+                <!-- End Icon Blocks -->
+            </div>
+
+            <div class="col-sm-6 col-md-4 g-mb-30">
+                <!-- Icon Blocks -->
+                <span class="g-font-size-40 g-color-primary mb-3">
+              <i class="icon-communication-062 u-line-icon-pro"></i>
+            </span>
+                <h4 class="h5 g-font-weight-600 g-mb-5">Phone Number</h4>
+                <span class="d-block">1-800-643-4500</span>
+                <!-- End Icon Blocks -->
+            </div>
+
+            <div class="col-sm-6 col-md-4 g-mb-30">
+                <!-- Icon Blocks -->
+                <span class="g-font-size-40 g-color-primary mb-3">
+              <i class="icon-electronics-005 u-line-icon-pro"></i>
+            </span>
+                <h4 class="h5 g-font-weight-600 g-mb-5">Email</h4>
+                <span class="d-block">mail@htmlstream.com</span>
+                <!-- End Icon Blocks -->
+            </div>
+        </div>
+
+        <div class="text-center mx-auto g-width-70x--md">
+            <form>
+                <div class="row">
+                    <div class="col-md-6 form-group g-mb-30">
+                        <input class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--focus rounded-0 g-py-13 g-px-15"
+                               type="text" placeholder="Your name">
+                    </div>
+
+                    <div class="col-md-6 form-group g-mb-30">
+                        <input class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--focus rounded-0 g-py-13 g-px-15"
+                               type="tel" placeholder="Your phone">
+                    </div>
+
+                    <div class="col-md-12 form-group g-mb-30">
+                        <input class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--focus rounded-0 g-py-13 g-px-15"
+                               type="text" placeholder="Subject">
+                    </div>
+
+                    <div class="col-md-12 form-group g-mb-30">
+                        <textarea
+                                class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--focus g-resize-none rounded-0 g-py-13 g-px-15"
+                                rows="7" placeholder="Message"></textarea>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button class="btn u-btn-primary text-uppercase rounded-0 g-px-25 g-py-13" type="submit"
+                            role="button">Send Message
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- End Contacts -->
+
+    <!-- Call to Action -->
+    <div class="g-bg-primary g-py-100">
+        <div class="g-max-width-645 text-center mx-auto">
+            <div class="mb-5">
+                <h2 class="g-color-white g-font-weight-600">Change of a living place - is the first step towards
+                    favorable changes</h2>
+            </div>
+
+            <span class="d-inline-block g-font-weight-600 text-uppercase mr-4">Call Us</span>
+            <a class="btn u-btn-outline-white g-brd-2 g-color-main g-color-primary--hover g-bg-white--hover g-font-weight-600 g-font-size-12 text-uppercase rounded-0 g-px-25 g-py-13 mb-2"
+               href="#">
+                (0161) 347 8854
+                <i class="g-pos-rel g-top-minus-1 ml-2 fa fa-angle-left"></i>
+            </a>
+            <span class="d-inline-block g-font-weight-600 text-uppercase mx-4">or</span>
+            <a class="btn u-btn-black g-brd-primary--hover g-color-primary g-color-main--hover g-bg-main g-bg-white--hover g-font-weight-600 g-font-size-12 text-uppercase rounded-0 g-px-25 g-py-13 mb-2"
+               href="contact-us.html">
+                Contact Us
+                <i class="g-pos-rel g-top-minus-1 ml-2 fa fa-angle-left"></i>
+            </a>
+        </div>
+    </div>
+{% endblock body %}
+
+{% block script %}
+    <script src="{% static 'assets/vendor/gmaps/gmaps.min.js' %}"></script>
+    <script src="{% static 'assets/js/components/gmap/hs.map.js' %}"></script>
+
+    <script>
+        $(document).on('ready', function () {
+            // initialization of header
+            $.HSCore.components.HSHeader.init($('#js-header'));
+            $.HSCore.helpers.HSHamburgers.init('.hamburger');
+
+            // initialization of HSMegaMenu component
+            $('.js-mega-menu').HSMegaMenu({
+                rtl: true,
+                event: 'hover',
+                pageContainer: $('.container'),
+                breakpoint: 991
+            });
+
+            // initialization of HSDropdown component
+            $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {
+                afterOpen: function () {
+                    $(this).find('input[type="search"]').focus();
+                }
+            });
+
+            // initialization of custom select
+            $.HSCore.components.HSSelect.init('.js-custom-select');
+
+            // initialization of go to
+            $.HSCore.components.HSGoTo.init('.js-go-to');
+        });
+
+        // initialization of google map
+        function initMap() {
+            $.HSCore.components.HSGMap.init('.js-g-map');
+        }
+    </script>
+
+    <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyAtt1z99GtrHZt_IcnK-wryNsQ30A112J0&callback=initMap" async
+            defer></script>
+{% endblock script %}
