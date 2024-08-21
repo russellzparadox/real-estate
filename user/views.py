@@ -28,7 +28,7 @@ class CustomLoginView(LoginView):
 
 class ResetPasswordView(SuccessMessageMixin, PasswordResetView):
     template_name = 'user/forgot-password.html'
-    email_template_name = 'password_reset_email.html'
+    email_template_name = 'user/password_reset_email.html'
     # subject_template_name = 'password_reset_subject.txt'
     success_message = "We've emailed you instructions for setting your password, " \
                       "if an account exists with the email you entered. You should receive them shortly." \
