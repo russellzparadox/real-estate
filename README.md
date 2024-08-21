@@ -12,7 +12,7 @@ python -m venv .venv #you only need to do this for the first time
 
 - ### windows
 
-```
+```shell
 .venv\Scripts\activate
 ```
 
@@ -24,7 +24,7 @@ source .venv/bin/activate
 
 if using fish
 
-```fish
+```shell
 source .venv/bin/activate.fish
 ```
 
@@ -32,8 +32,8 @@ source .venv/bin/activate.fish
 
 **you only need to do this for the first time**
 
-```
- pip install -r requirements.txt 
+```shell
+pip install -r requirements.txt 
 ```
 
 ```shell
