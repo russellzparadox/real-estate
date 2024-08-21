@@ -4,4 +4,4 @@ from django.views.generic import TemplateView
 
 # Create your views here.
 class AgentListView(TemplateView):
-    template_name = 'agents-list.html'
+    template_name = 'agents/agents-list.html'

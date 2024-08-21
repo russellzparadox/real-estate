@@ -9,7 +9,7 @@ from iranian_cities.models import Shahr, Ostan
 
 
 class CasesListView(TemplateView):
-    template_name = 'page-list-view-1.html'
+    template_name = 'case/case-list-view.html'
 
 
 
